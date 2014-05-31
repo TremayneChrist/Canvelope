@@ -31,9 +31,6 @@ var canvelope;
               property == 'left' ? 'width' : property == 'top' ? 'height' : null;
             if (p) {
               var parent = ec2dEl.parent ? ec2dEl.parent : ec2dEl.container;
-              console.clear();
-              console.log(Number(value.substring(0, value.length - 1)) / 100 *
-                calculator.convertToSize(p, parent.style[p], parent));
               return Number(value.substring(0, value.length - 1)) / 100 *
                 calculator.convertToSize(p, parent.style[p], parent);
             }
@@ -49,7 +46,7 @@ var canvelope;
 
     this.width = canvas.width;
     this.height = canvas.height;
-    this.context = canvas.getContext('webgl');
+    this.context = canvas.getContext('2d');
     this.elements = [];
     this.onFrame();
   }
